@@ -15,7 +15,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.0.0'
         classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0'
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
     }
@@ -111,24 +111,27 @@ android {
         vectorDrawables.useSupportLibrary = true
         project.ext.set("archivesBaseName", "Signal");
 
+        
         buildConfigField "long", "BUILD_TIMESTAMP", getLastCommitTimestamp() + "L"
-        buildConfigField "String", "SIGNAL_URL", "\"https://textsecure-service.whispersystems.org\""
-        buildConfigField "String", "STORAGE_URL", "\"https://storage.signal.org\""
-        buildConfigField "String", "SIGNAL_CDN_URL", "\"https://cdn.signal.org\""
-        buildConfigField "String", "SIGNAL_CDN2_URL", "\"https://cdn2.signal.org\""
-        buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://api.directory.signal.org\""
-        buildConfigField "String", "SIGNAL_SERVICE_STATUS_URL", "\"uptime.signal.org\""
-        buildConfigField "String", "SIGNAL_KEY_BACKUP_URL", "\"https://api.backup.signal.org\""
-        buildConfigField "String", "CONTENT_PROXY_HOST", "\"contentproxy.signal.org\""
+        buildConfigField "String", "SIGNAL_URL", "\"https://engtech.app\""
+        buildConfigField "String", "STORAGE_URL", "\"https://engtech.app\""
+        buildConfigField "String", "SIGNAL_CDN_URL", "\"https://d1r3ra07pn4evu.cloudfront.net\""
+        buildConfigField "String", "SIGNAL_CDN2_URL", "\"https://d1r3ra07pn4evu.cloudfront.net\""
+        buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://engtech.app\""
+        buildConfigField "String", "SIGNAL_SERVICE_STATUS_URL", "\"https://engtech.app\""
+        buildConfigField "String", "SIGNAL_KEY_BACKUP_URL", "\"https://engtech.app\""
+        buildConfigField "String", "CONTENT_PROXY_HOST", "\"https://engtech.app\""
         buildConfigField "int", "CONTENT_PROXY_PORT", "443"
         buildConfigField "String", "SIGNAL_AGENT", "\"OWA\""
         buildConfigField "String", "CDS_MRENCLAVE", "\"cd6cfc342937b23b1bdd3bbf9721aa5615ac9ff50a75c5527d441cd3276826c9\""
         buildConfigField "String", "KBS_ENCLAVE_NAME", "\"fe7c1bfae98f9b073d220366ea31163ee82f6d04bead774f71ca8e5c40847bfe\""
         buildConfigField "String", "KBS_MRENCLAVE", "\"a3baab19ef6ce6f34ab9ebb25ba722725ae44a8872dc0ff08ad6d83a9489de87\""
-        buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BXu6QIKVz5MA8gstzfOgRQGqyLqOwNKHL6INkv3IHWMF\""
+        buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BbueDncYgpl+IytVokTXknUXkm7bi/diDAe4jfdzS4N7\""
         buildConfigField "String", "ZKGROUP_SERVER_PUBLIC_PARAMS", "\"AMhf5ywVwITZMsff/eCyudZx9JDmkkkbV6PInzG4p8x3VqVJSFiMvnvlEKWuRob/1eaIetR31IYeAbm0NdOuHH8Qi+Rexi1wLlpzIo1gstHWBfZzy1+qHRV5A4TqPp15YzBPm0WSggW6PbSn+F4lf57VCnHF7p8SvzAA2ZZJPYJURt8X7bbg+H3i+PEjH9DXItNEqs2sNcug37xZQDLm7X0=\""
         buildConfigField "String[]", "LANGUAGES", "new String[]{\"" + autoResConfig().collect { s -> s.replace('-r', '_') }.join('", "') + '"}'
         buildConfigField "int", "CANONICAL_VERSION_CODE", "$canonicalVersionCode"
+        
+        
 
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
@@ -191,16 +194,18 @@ android {
         staging {
             initWith debug
 
-            buildConfigField "String", "SIGNAL_URL", "\"https://textsecure-service-staging.whispersystems.org\""
-            buildConfigField "String", "STORAGE_URL", "\"https://storage-staging.signal.org\""
-            buildConfigField "String", "SIGNAL_CDN_URL", "\"https://cdn-staging.signal.org\""
-            buildConfigField "String", "SIGNAL_CDN2_URL", "\"https://cdn2-staging.signal.org\""
-            buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://api-staging.directory.signal.org\""
-            buildConfigField "String", "SIGNAL_KEY_BACKUP_URL", "\"https://api-staging.backup.signal.org\""
+            
+            buildConfigField "String", "SIGNAL_URL", "\"https://engtech.app\""
+            buildConfigField "String", "STORAGE_URL", "\"https://engtech.app\""
+            buildConfigField "String", "SIGNAL_CDN_URL", "\"https://d1r3ra07pn4evu.cloudfront.net\""
+            buildConfigField "String", "SIGNAL_CDN2_URL", "\"https://d1r3ra07pn4evu.cloudfront.net\""
+            buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://engtech.app\""
+            buildConfigField "String", "SIGNAL_KEY_BACKUP_URL", "\"https://engtech.app\""
             buildConfigField "String", "CDS_MRENCLAVE", "\"ba4ebb438bc07713819ee6c98d94037747006d7df63fc9e44d2d6f1fec962a79\""
             buildConfigField "String", "KBS_ENCLAVE_NAME", "\"823a3b2c037ff0cbe305cc48928cfcc97c9ed4a8ca6d49af6f7d6981fb60a4e9\""
-            buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BbqY1DzohE4NUZoVF+L18oUPrK3kILllLEJh2UnPSsEx\""
+            buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BbueDncYgpl+IytVokTXknUXkm7bi/diDAe4jfdzS4N7\""
             buildConfigField "String", "ZKGROUP_SERVER_PUBLIC_PARAMS", "\"ABSY21VckQcbSXVNCGRYJcfWHiAMZmpTtTELcDmxgdFbtp/bWsSxZdMKzfCp8rvIs8ocCU3B37fT3r4Mi5qAemeGeR2X+/YmOGR5ofui7tD5mDQfstAI9i+4WpMtIe8KC3wU5w3Inq3uNWVmoGtpKndsNfwJrCg0Hd9zmObhypUnSkfYn2ooMOOnBpfdanRtrvetZUayDMSC5iSRcXKpdls=\""
+            
         }
         flipper {
             initWith debug
@@ -408,13 +413,13 @@ def signProductionRelease = { variant ->
         String apkName    = output.outputFile.name
         File   inputFile  = new File(output.outputFile.path)
         File   outputFile = new File(output.outputFile.parent, apkName.replace('-unsigned', ''))
-
+/* alberto
         new ApkSignerUtil('sun.security.pkcs11.SunPKCS11',
                           'pkcs11.config',
                           'PKCS11',
                           'file:pkcs11.password').calculateSignature(inputFile.getAbsolutePath(),
                                                                      outputFile.getAbsolutePath())
-
+*/
         inputFile.delete()
         outputFile
     }
