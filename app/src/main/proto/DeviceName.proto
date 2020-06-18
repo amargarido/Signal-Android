@@ -8,7 +8,7 @@ syntax = "proto2";
 
 package signalservice;
 
-option java_package         = "meta.devicelist";
+option java_package         = "br.eti.meta.devicelist";
 option java_outer_classname = "DeviceNameProtos";
 
 message DeviceName {

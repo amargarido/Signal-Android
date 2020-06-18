@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <org.eti.meta.video.VideoPlayer
+    <br.eti.meta.video.VideoPlayer
         android:id="@+id/video_player"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/grey_400_transparent" />
 
-    <org.eti.meta.scribbles.VideoEditorHud
+    <br.eti.meta.scribbles.VideoEditorHud
         android:id="@+id/video_editor_hud"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

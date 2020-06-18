@@ -1,4 +1,4 @@
-package org.eti.meta;
+package br.eti.meta;
 
 import com.facebook.flipper.android.AndroidFlipperClient;
 import com.facebook.flipper.core.FlipperClient;
@@ -8,7 +8,7 @@ import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
 import com.facebook.flipper.plugins.sharedpreferences.SharedPreferencesFlipperPlugin;
 import com.facebook.soloader.SoLoader;
 
-import org.eti.meta.database.FlipperSqlCipherAdapter;
+import br.eti.meta.database.FlipperSqlCipherAdapter;
 
 public class FlipperApplicationContext extends ApplicationContext {
 

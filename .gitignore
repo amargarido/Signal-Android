@@ -26,3 +26,4 @@ jni/libspeex/.deps/
 *.sh
 pkcs11.password
 app/play/
+app/libs/

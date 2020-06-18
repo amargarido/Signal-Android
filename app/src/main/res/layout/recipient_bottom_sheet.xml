@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:theme="@style/Theme.Signal.RecipientBottomSheet.Light">
 
-    <org.eti.meta.components.AvatarImageView
+    <br.eti.meta.components.AvatarImageView
         android:id="@+id/rbs_recipient_avatar"
         android:layout_width="96dp"
         android:layout_height="96dp"

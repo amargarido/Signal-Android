@@ -6,7 +6,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <org.eti.meta.contacts.RecipientsEditor
+        <br.eti.meta.contacts.RecipientsEditor
             android:id="@+id/recipients_text"
            android:layout_height="wrap_content"
             android:capitalize="sentences"

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/addGroupDetailsFragment"
-        android:name="org.eti.meta.groups.ui.creategroup.details.AddGroupDetailsFragment"
+        android:name="br.eti.meta.groups.ui.creategroup.details.AddGroupDetailsFragment"
         android:label="add_group_details_fragment"
         tools:layout="@layout/add_group_details_fragment">
 
         <argument
             android:name="recipient_ids"
-            app:argType="org.thoughtcrime.securesms.recipients.RecipientId[]"
+            app:argType="br.eti.meta.recipients.RecipientId[]"
             app:nullable="false" />
 
     </fragment>

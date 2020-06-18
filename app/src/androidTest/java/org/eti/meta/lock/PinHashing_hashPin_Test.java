@@ -1,7 +1,9 @@
-package org.eti.meta.lock;
+package br.eti.meta.lock;
 
 import org.junit.Test;
-import org.eti.meta.util.Hex;
+
+import br.eti.meta.lock.PinHashing;
+import br.eti.meta.util.Hex;
 import org.whispersystems.signalservice.api.kbs.HashedPin;
 import org.whispersystems.signalservice.api.kbs.KbsData;
 import org.whispersystems.signalservice.api.kbs.MasterKey;

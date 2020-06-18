@@ -2,7 +2,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <org.eti.meta.preferences.widgets.ProfilePreference
+    <br.eti.meta.preferences.widgets.ProfilePreference
             android:key="preference_category_profile"/>
 
     <Preference android:key="preference_category_sms_mms"

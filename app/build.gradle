@@ -109,7 +109,7 @@ android {
         multiDexEnabled true
 
         vectorDrawables.useSupportLibrary = true
-        project.ext.set("archivesBaseName", "Signal");
+        project.ext.set("archivesBaseName", "i9");
 
         
         buildConfigField "long", "BUILD_TIMESTAMP", getLastCommitTimestamp() + "L"
