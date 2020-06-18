@@ -15,13 +15,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.components.AvatarImageView;
+import org.thoughtcrime.securesms.contacts.avatars.FallbackContactPhoto;
+import org.thoughtcrime.securesms.contacts.avatars.FallbackPhoto80dp;
 import org.thoughtcrime.securesms.groups.GroupId;
+import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.recipients.RecipientExporter;
 import org.thoughtcrime.securesms.recipients.RecipientId;
 import org.thoughtcrime.securesms.util.ServiceUtil;
@@ -117,14 +122,22 @@ public final class RecipientBottomSheetDialogFragment extends BottomSheetDialogF
     viewModel = ViewModelProviders.of(this, factory).get(RecipientDialogViewModel.class);
 
     viewModel.getRecipient().observe(getViewLifecycleOwner(), recipient -> {
-      avatar.setRecipient(recipient);
+      avatar.setFallbackPhotoProvider(new Recipient.FallbackPhotoProvider() {
+        @Override
+        public @NonNull FallbackContactPhoto getPhotoForLocalNumber() {
+          return new FallbackPhoto80dp(R.drawable.ic_note_80, recipient.getColor());
+        }
+      });
+      avatar.setAvatar(recipient);
 
-      String name = recipient.getProfileName().toString();
+      String name = recipient.isLocalNumber() ? requireContext().getString(R.string.note_to_self)
+                                              : recipient.getDisplayName(requireContext());
       fullName.setText(name);
       fullName.setVisibility(TextUtils.isEmpty(name) ? View.GONE : View.VISIBLE);
 
-      String usernameNumberString = String.format("%s %s", recipient.getUsername().or(""), recipient.getSmsAddress().or(""))
-                                          .trim();
+      String usernameNumberString = recipient.hasAUserSetDisplayName(requireContext()) && !recipient.isLocalNumber()
+                                    ? String.format("%s %s", recipient.getUsername().or(""), recipient.getSmsAddress().or("")).trim()
+                                    : "";
       usernameNumber.setText(usernameNumberString);
       usernameNumber.setVisibility(TextUtils.isEmpty(usernameNumberString) ? View.GONE : View.VISIBLE);
       usernameNumber.setOnLongClickListener(v -> {
@@ -135,12 +148,12 @@ public final class RecipientBottomSheetDialogFragment extends BottomSheetDialogF
       });
 
       boolean blocked = recipient.isBlocked();
-      blockButton.setVisibility(blocked ? View.GONE : View.VISIBLE);
-      unblockButton.setVisibility(blocked ? View.VISIBLE : View.GONE);
+      blockButton  .setVisibility(recipient.isLocalNumber() ||  blocked ? View.GONE : View.VISIBLE);
+      unblockButton.setVisibility(recipient.isLocalNumber() || !blocked ? View.GONE : View.VISIBLE);
 
-      secureCallButton.setVisibility(recipient.isRegistered() ? View.VISIBLE : View.GONE);
+      secureCallButton.setVisibility(recipient.isRegistered() && !recipient.isLocalNumber() ? View.VISIBLE : View.GONE);
 
-      if (recipient.isSystemContact() || recipient.isGroup()) {
+      if (recipient.isSystemContact() || recipient.isGroup() || recipient.isLocalNumber()) {
         addContactButton.setVisibility(View.GONE);
       } else {
         addContactButton.setVisibility(View.VISIBLE);
@@ -150,7 +163,7 @@ public final class RecipientBottomSheetDialogFragment extends BottomSheetDialogF
       }
 
       addToGroupButton.setText(groupId == null ? R.string.RecipientBottomSheet_add_to_a_group : R.string.RecipientBottomSheet_add_to_another_group);
-      addToGroupButton.setVisibility(recipient.isRegistered() && !recipient.isGroup() ? View.VISIBLE : View.GONE);
+      addToGroupButton.setVisibility(recipient.isRegistered() && !recipient.isGroup() && !recipient.isLocalNumber() ? View.VISIBLE : View.GONE);
     });
 
     viewModel.getAdminActionStatus().observe(getViewLifecycleOwner(), adminStatus -> {
@@ -212,5 +225,12 @@ public final class RecipientBottomSheetDialogFragment extends BottomSheetDialogF
     if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_ADD_CONTACT) {
       viewModel.onAddedToContacts();
     }
+  }
+
+  @Override
+  public void show(@NonNull FragmentManager manager, @Nullable String tag) {
+    FragmentTransaction transaction = manager.beginTransaction();
+    transaction.add(this, tag);
+    transaction.commitAllowingStateLoss();
   }
 }
