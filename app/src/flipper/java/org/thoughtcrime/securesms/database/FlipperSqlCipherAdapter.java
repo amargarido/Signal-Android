@@ -1,4 +1,4 @@
-package org.thoughtcrime.securesms.database;
+package org.eti.meta.database;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,7 +14,7 @@ import net.sqlcipher.DatabaseUtils;
 import net.sqlcipher.database.SQLiteDatabase;
 import net.sqlcipher.database.SQLiteStatement;
 
-import org.thoughtcrime.securesms.database.helpers.SQLCipherOpenHelper;
+import org.eti.meta.database.helpers.SQLCipherOpenHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;

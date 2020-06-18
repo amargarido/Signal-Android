@@ -36,7 +36,7 @@
                     android:layout_height="128dp"
                     android:layout_gravity="center_horizontal" />
 
-                <org.thoughtcrime.securesms.components.emoji.EmojiTextView
+                <org.eti.meta.components.emoji.EmojiTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -117,7 +117,7 @@
                     android:layout_gravity="center_vertical|start"
                     android:layout_marginEnd="10dp" />
 
-                <org.thoughtcrime.securesms.components.emoji.EmojiTextView
+                <org.eti.meta.components.emoji.EmojiTextView
                     android:id="@+id/name_target"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <org.thoughtcrime.securesms.components.AvatarImageView
+    <org.eti.meta.components.AvatarImageView
         android:id="@+id/recipient_avatar"
         android:layout_width="128dp"
         android:layout_height="128dp"
@@ -143,7 +143,7 @@
         android:transitionName="avatar"
         app:layout_behavior=".recipients.ui.RecipientSettingsCoordinatorLayoutBehavior" />
 
-    <org.thoughtcrime.securesms.components.emoji.EmojiTextView
+    <org.eti.meta.components.emoji.EmojiTextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -367,7 +367,7 @@
 
                     </LinearLayout>
 
-                    <org.thoughtcrime.securesms.components.ThreadPhotoRailView
+                    <org.eti.meta.components.ThreadPhotoRailView
                         android:id="@+id/recent_photos"
                         android:layout_width="match_parent"
                         android:layout_height="90dp"
@@ -463,7 +463,7 @@
                         android:textAppearance="@style/Signal.Text.Body"
                         android:textColor="@color/ultramarine_text_button" />
 
-                    <org.thoughtcrime.securesms.groups.ui.GroupMemberListView
+                    <org.eti.meta.groups.ui.GroupMemberListView
                         android:id="@+id/shared_group_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

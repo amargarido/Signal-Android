@@ -5,7 +5,7 @@
 
     <uses-sdk tools:overrideLibrary="androidx.camera.core,androidx.camera.camera2,androidx.camera.lifecycle" />
 
-    <permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"
+    <permission android:name="org.eti.meta.ACCESS_SECRETS"
                 android:label="Access to TextSecure Secrets"
                 android:protectionLevel="signature" />
 
@@ -90,7 +90,7 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
 
-    <application android:name=".ApplicationContext"
+    <application android:name="org.eti.meta.ApplicationContext"
                  android:icon="@mipmap/ic_launcher"
                  android:label="@string/app_name"
                  android:supportsRtl="true"
@@ -113,7 +113,7 @@
     <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
     <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="false" />
 
-    <activity android:name="org.thoughtcrime.securesms.WebRtcCallActivity"
+    <activity android:name="org.eti.meta.WebRtcCallActivity"
               android:theme="@style/TextSecure.LightTheme.WebRTCCall"
               android:excludeFromRecents="true"
               android:screenOrientation="portrait"
@@ -122,22 +122,22 @@
               android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
               android:launchMode="singleTask"/>
 
-    <activity android:name=".InviteActivity"
+    <activity android:name="org.eti.meta.InviteActivity"
               android:theme="@style/Signal.Light.NoActionBar.Invite"
               android:windowSoftInputMode="stateHidden"
-              android:parentActivityName=".MainActivity"
+              android:parentActivityName="org.eti.meta.MainActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="org.thoughtcrime.securesms.MainActivity" />
+            android:value="org.eti.meta.MainActivity" />
     </activity>
 
-    <activity android:name=".PromptMmsActivity"
+    <activity android:name="org.eti.meta.PromptMmsActivity"
               android:label="Configure MMS Settings"
               android:windowSoftInputMode="stateUnchanged"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".DeviceProvisioningActivity"
+    <activity android:name="org.eti.meta.DeviceProvisioningActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
@@ -147,10 +147,10 @@
         </intent-filter>
     </activity>
 
-    <activity android:name=".preferences.MmsPreferencesActivity"
+    <activity android:name="org.eti.meta.preferences.MmsPreferencesActivity"
                android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".sharing.ShareActivity"
+    <activity android:name="org.eti.meta.sharing.ShareActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:excludeFromRecents="true"
               android:launchMode="singleTask"
@@ -183,7 +183,7 @@
 
     </activity>
 
-    <activity android:name=".stickers.StickerPackPreviewActivity"
+    <activity android:name="org.eti.meta.stickers.StickerPackPreviewActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:launchMode="singleTask"
               android:noHistory="true"
@@ -207,7 +207,7 @@
     </activity>
 
     <activity-alias android:name=".RoutingActivity"
-                    android:targetActivity=".MainActivity"
+                    android:targetActivity="org.eti.meta.MainActivity"
                     android:exported="true">
 
         <intent-filter>
@@ -223,19 +223,19 @@
 
     </activity-alias>
 
-    <activity android:name=".conversation.ConversationActivity"
+    <activity android:name="org.eti.meta.conversation.ConversationActivity"
               android:windowSoftInputMode="stateUnchanged"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
-              android:parentActivityName=".MainActivity">
+              android:parentActivityName="org.eti.meta.MainActivity">
         <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.thoughtcrime.securesms.MainActivity" />
+                android:value="org.eti.meta.MainActivity" />
     </activity>
 
-    <activity android:name=".longmessage.LongMessageActivity" />
+    <activity android:name="org.eti.meta.longmessage.LongMessageActivity" />
 
-    <activity android:name=".conversation.ConversationPopupActivity"
+    <activity android:name="org.eti.meta.conversation.ConversationPopupActivity"
               android:windowSoftInputMode="stateVisible"
               android:launchMode="singleTask"
               android:taskAffinity=""
@@ -243,75 +243,75 @@
               android:theme="@style/TextSecure.LightTheme.Popup"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize" />
 
-    <activity android:name=".messagedetails.MessageDetailsActivity"
+    <activity android:name="org.eti.meta.messagedetails.MessageDetailsActivity"
               android:label="@string/AndroidManifest__message_details"
               android:windowSoftInputMode="stateHidden"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".groups.ui.pendingmemberinvites.PendingMemberInvitesActivity"
+    <activity android:name="org.eti.meta.groups.ui.pendingmemberinvites.PendingMemberInvitesActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar" />
 
-    <activity android:name=".groups.ui.managegroup.ManageGroupActivity"
+    <activity android:name="org.eti.meta.groups.ui.managegroup.ManageGroupActivity"
               android:windowSoftInputMode="stateAlwaysHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".recipients.ui.managerecipient.ManageRecipientActivity"
+    <activity android:name="org.eti.meta.recipients.ui.managerecipient.ManageRecipientActivity"
               android:windowSoftInputMode="stateAlwaysHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".DatabaseMigrationActivity"
+    <activity android:name="org.eti.meta.DatabaseMigrationActivity"
               android:theme="@style/NoAnimation.Theme.AppCompat.Light.DarkActionBar"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".migrations.ApplicationMigrationActivity"
+    <activity android:name="org.eti.meta.migrations.ApplicationMigrationActivity"
               android:theme="@style/NoAnimation.Theme.AppCompat.Light.DarkActionBar"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-      <activity android:name=".PassphraseCreateActivity"
+      <activity android:name="org.eti.meta.PassphraseCreateActivity"
               android:label="@string/AndroidManifest__create_passphrase"
               android:windowSoftInputMode="stateUnchanged"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".PassphrasePromptActivity"
+    <activity android:name="org.eti.meta.PassphrasePromptActivity"
               android:launchMode="singleTask"
               android:theme="@style/TextSecure.LightIntroTheme"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".NewConversationActivity"
+    <activity android:name="org.eti.meta.NewConversationActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:windowSoftInputMode="stateAlwaysVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".PushContactSelectionActivity"
+    <activity android:name="org.eti.meta.PushContactSelectionActivity"
           android:label="@string/AndroidManifest__select_contacts"
           android:windowSoftInputMode="stateHidden"
           android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".giph.ui.GiphyActivity"
+    <activity android:name="org.eti.meta.giph.ui.GiphyActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:windowSoftInputMode="stateHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".mediasend.MediaSendActivity"
+    <activity android:name="org.eti.meta.mediasend.MediaSendActivity"
               android:theme="@style/TextSecure.FullScreenMedia"
               android:windowSoftInputMode="stateHidden"
               android:launchMode="singleTop"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".PassphraseChangeActivity"
+    <activity android:name="org.eti.meta.PassphraseChangeActivity"
               android:label="@string/AndroidManifest__change_passphrase"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".VerifyIdentityActivity"
+    <activity android:name="org.eti.meta.VerifyIdentityActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".ApplicationPreferencesActivity"
+    <activity android:name="org.eti.meta.ApplicationPreferencesActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -319,51 +319,51 @@
         </intent-filter>
     </activity>
 
-    <activity android:name=".registration.RegistrationNavigationActivity"
+    <activity android:name="org.eti.meta.registration.RegistrationNavigationActivity"
               android:launchMode="singleTask"
               android:theme="@style/TextSecure.LightRegistrationTheme"
               android:windowSoftInputMode="stateUnchanged"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".revealable.ViewOnceMessageActivity"
+    <activity android:name="org.eti.meta.revealable.ViewOnceMessageActivity"
               android:launchMode="singleTask"
               android:theme="@style/TextSecure.FullScreenMedia"
               android:windowSoftInputMode="stateHidden"
               android:excludeFromRecents="true"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".stickers.StickerManagementActivity"
+    <activity android:name="org.eti.meta.stickers.StickerManagementActivity"
               android:launchMode="singleTask"
               android:theme="@style/TextSecure.LightTheme"
               android:windowSoftInputMode="stateUnchanged"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-     <activity android:name=".DeviceActivity"
+     <activity android:name="org.eti.meta.DeviceActivity"
                android:label="@string/AndroidManifest__linked_devices"
                android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".logsubmit.SubmitDebugLogActivity"
+    <activity android:name="org.eti.meta.logsubmit.SubmitDebugLogActivity"
               android:label="@string/AndroidManifest__log_submit"
               android:windowSoftInputMode="stateHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".MediaPreviewActivity"
+    <activity android:name="org.eti.meta.MediaPreviewActivity"
               android:label="@string/AndroidManifest__media_preview"
               android:windowSoftInputMode="stateHidden"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".AvatarPreviewActivity"
+    <activity android:name="org.eti.meta.AvatarPreviewActivity"
               android:label="@string/AndroidManifest__media_preview"
               android:windowSoftInputMode="stateHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".mediaoverview.MediaOverviewActivity"
+    <activity android:name="org.eti.meta.mediaoverview.MediaOverviewActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:windowSoftInputMode="stateHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".DummyActivity"
+    <activity android:name="org.eti.meta.DummyActivity"
               android:theme="@android:style/Theme.NoDisplay"
               android:enabled="true"
               android:allowTaskReparenting="true"
@@ -374,11 +374,11 @@
               android:clearTaskOnLaunch="true"
               android:finishOnTaskLaunch="true" />
 
-    <activity android:name=".PlayServicesProblemActivity"
+    <activity android:name="org.eti.meta.PlayServicesProblemActivity"
               android:theme="@style/TextSecure.DialogActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".SmsSendtoActivity">
+    <activity android:name="org.eti.meta.SmsSendtoActivity">
         <intent-filter>
             <action android:name="android.intent.action.SENDTO" />
             <action android:name="android.intent.action.VIEW" />
@@ -396,7 +396,7 @@
         </intent-filter>
     </activity>
 
-    <activity android:name="org.thoughtcrime.securesms.webrtc.VoiceCallShare"
+    <activity android:name="org.eti.meta.webrtc.VoiceCallShare"
               android:excludeFromRecents="true"
               android:theme="@style/NoAnimation.Theme.BlackScreen"
               android:launchMode="singleTask"
@@ -410,33 +410,33 @@
 
     </activity>
 
-    <activity android:name=".mediasend.AvatarSelectionActivity"
+    <activity android:name="org.eti.meta.mediasend.AvatarSelectionActivity"
               android:theme="@style/TextSecure.FullScreenMedia"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".BlockedContactsActivity"
+    <activity android:name="org.eti.meta.BlockedContactsActivity"
               android:theme="@style/TextSecure.LightTheme"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".scribbles.ImageEditorStickerSelectActivity"
+    <activity android:name="org.eti.meta.scribbles.ImageEditorStickerSelectActivity"
               android:theme="@style/TextSecure.DarkTheme"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".profiles.edit.EditProfileActivity"
+    <activity android:name="org.eti.meta.profiles.edit.EditProfileActivity"
               android:theme="@style/TextSecure.LightRegistrationTheme"
               android:windowSoftInputMode="stateVisible|adjustResize" />
 
-    <activity android:name=".lock.v2.CreateKbsPinActivity"
+    <activity android:name="org.eti.meta.lock.v2.CreateKbsPinActivity"
             android:theme="@style/TextSecure.LightRegistrationTheme"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".lock.v2.KbsMigrationActivity"
+    <activity android:name="org.eti.meta.lock.v2.KbsMigrationActivity"
             android:theme="@style/TextSecure.LightRegistrationTheme"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".ClearProfileAvatarActivity"
+    <activity android:name="org.eti.meta.ClearProfileAvatarActivity"
             android:theme="@style/Theme.AppCompat.Dialog.Alert"
             android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             android:icon="@drawable/clear_profile_avatar"
@@ -448,61 +448,61 @@
         </intent-filter>
     </activity>
 
-    <activity android:name=".messagerequests.MessageRequestMegaphoneActivity"
+    <activity android:name="org.eti.meta.messagerequests.MessageRequestMegaphoneActivity"
               android:theme="@style/TextSecure.LightRegistrationTheme"
               android:windowSoftInputMode="adjustResize"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".contactshare.ContactShareEditActivity"
+    <activity android:name="org.eti.meta.contactshare.ContactShareEditActivity"
               android:theme="@style/TextSecure.LightTheme"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".contactshare.ContactNameEditActivity"
+    <activity android:name="org.eti.meta.contactshare.ContactNameEditActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".contactshare.SharedContactDetailsActivity"
+    <activity android:name="org.eti.meta.contactshare.SharedContactDetailsActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".ShortcutLauncherActivity"
+    <activity android:name="org.eti.meta.ShortcutLauncherActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:exported="true"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity
-            android:name=".maps.PlacePickerActivity"
+            android:name="org.eti.meta.maps.PlacePickerActivity"
             android:label="@string/PlacePickerActivity_title"
             android:theme="@style/Theme.Signal.DayNight.NoActionBar"
             android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".MainActivity"
+    <activity android:name="org.eti.meta.MainActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize" />
 
-    <activity android:name=".pin.PinRestoreActivity"
+    <activity android:name="org.eti.meta.pin.PinRestoreActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize" />
 
-    <activity android:name=".groups.ui.creategroup.CreateGroupActivity"
+    <activity android:name="org.eti.meta.groups.ui.creategroup.CreateGroupActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar" />
 
-    <activity android:name=".groups.ui.addtogroup.AddToGroupsActivity"
+    <activity android:name="org.eti.meta.groups.ui.addtogroup.AddToGroupsActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar" />
 
-    <activity android:name=".groups.ui.addmembers.AddMembersActivity"
+    <activity android:name="org.eti.meta.groups.ui.addmembers.AddMembersActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar" />
 
-    <activity android:name=".groups.ui.creategroup.details.AddGroupDetailsActivity"
+    <activity android:name="org.eti.meta.groups.ui.creategroup.details.AddGroupDetailsActivity"
               android:theme="@style/Theme.Signal.DayNight.NoActionBar" />
 
-    <service android:enabled="true" android:name="org.thoughtcrime.securesms.service.WebRtcCallService"/>
-    <service android:enabled="true" android:name=".service.ApplicationMigrationService"/>
-    <service android:enabled="true" android:exported="false" android:name=".service.KeyCachingService"/>
-    <service android:enabled="true" android:name=".messages.IncomingMessageObserver$ForegroundService"/>
+    <service android:enabled="true" android:name="org.eti.meta.service.WebRtcCallService"/>
+    <service android:enabled="true" android:name="org.eti.meta.service.ApplicationMigrationService"/>
+    <service android:enabled="true" android:exported="false" android:name="org.eti.meta.service.KeyCachingService"/>
+    <service android:enabled="true" android:name="org.eti.meta.messages.IncomingMessageObserver$ForegroundService"/>
 
-    <service android:name=".service.QuickResponseService"
+    <service android:name="org.eti.meta.service.QuickResponseService"
              android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
              android:exported="true" >
         <intent-filter>
@@ -515,14 +515,14 @@
         </intent-filter>
     </service>
 
-    <service android:name=".service.AccountAuthenticatorService" android:exported="true">
+    <service android:name="org.eti.meta.service.AccountAuthenticatorService" android:exported="true">
         <intent-filter>
             <action android:name="android.accounts.AccountAuthenticator" />
         </intent-filter>
         <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator" />
     </service>
 
-    <service android:name=".service.ContactsSyncAdapterService" android:exported="true">
+    <service android:name="org.eti.meta.service.ContactsSyncAdapterService" android:exported="true">
         <intent-filter>
             <action android:name="android.content.SyncAdapter"/>
         </intent-filter>
@@ -530,24 +530,24 @@
         <meta-data android:name="android.provider.CONTACTS_STRUCTURE" android:resource="@xml/contactsformat" />
     </service>
 
-    <service android:name=".service.DirectShareService"
+    <service android:name="org.eti.meta.service.DirectShareService"
              android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
         <intent-filter>
             <action android:name="android.service.chooser.ChooserTargetService" />
         </intent-filter>
     </service>
 
-    <service android:name=".service.GenericForegroundService"/>
+    <service android:name="org.eti.meta.service.GenericForegroundService"/>
 
-    <service android:name=".gcm.FcmFetchService" />
+    <service android:name="org.eti.meta.gcm.FcmFetchService" />
 
-    <service android:name=".gcm.FcmReceiveService">
+    <service android:name="org.eti.meta.gcm.FcmReceiveService">
         <intent-filter>
             <action android:name="com.google.firebase.MESSAGING_EVENT" />
         </intent-filter>
     </service>
 
-    <receiver android:name=".service.SmsListener"
+    <receiver android:name="org.eti.meta.service.SmsListener"
               android:permission="android.permission.BROADCAST_SMS"
               android:enabled="true"
               android:exported="true">
@@ -559,14 +559,14 @@
              </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.SmsDeliveryListener"
+    <receiver android:name="org.eti.meta.service.SmsDeliveryListener"
               android:exported="true">
         <intent-filter>
             <action android:name="org.thoughtcrime.securesms.services.MESSAGE_SENT"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.MmsListener"
+    <receiver android:name="org.eti.meta.service.MmsListener"
               android:enabled="true"
               android:exported="true"
               android:permission="android.permission.BROADCAST_WAP_PUSH">
@@ -580,7 +580,7 @@
              </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.MarkReadReceiver"
+    <receiver android:name="org.eti.meta.notifications.MarkReadReceiver"
               android:enabled="true"
               android:exported="false">
         <intent-filter>
@@ -588,7 +588,7 @@
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.RemoteReplyReceiver"
+    <receiver android:name="org.eti.meta.notifications.RemoteReplyReceiver"
               android:enabled="true"
               android:exported="false">
         <intent-filter>
@@ -596,36 +596,36 @@
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.AndroidAutoHeardReceiver"
+    <receiver android:name="org.eti.meta.notifications.AndroidAutoHeardReceiver"
               android:exported="false">
         <intent-filter>
           <action android:name="org.thoughtcrime.securesms.notifications.ANDROID_AUTO_HEARD"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.AndroidAutoReplyReceiver"
+    <receiver android:name="org.eti.meta.notifications.AndroidAutoReplyReceiver"
               android:exported="false">
         <intent-filter>
           <action android:name="org.thoughtcrime.securesms.notifications.ANDROID_AUTO_REPLY"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.ExpirationListener" />
+    <receiver android:name="org.eti.meta.service.ExpirationListener" />
 
-    <receiver android:name=".revealable.ViewOnceMessageManager$ViewOnceAlarm" />
+    <receiver android:name="org.eti.meta.revealable.ViewOnceMessageManager$ViewOnceAlarm" />
 
-    <provider android:name=".providers.PartProvider"
+    <provider android:name="org.eti.meta.providers.PartProvider"
               android:grantUriPermissions="true"
               android:exported="false"
-              android:authorities="org.thoughtcrime.provider.securesms" />
+              android:authorities="org.eti.provider.securesms" />
 
-    <provider android:name=".providers.MmsBodyProvider"
+    <provider android:name="org.eti.meta.providers.MmsBodyProvider"
               android:grantUriPermissions="true"
               android:exported="false"
-              android:authorities="org.thoughtcrime.provider.securesms.mms" />
+              android:authorities="org.eti.provider.securesms.mms" />
 
     <provider android:name="androidx.core.content.FileProvider"
-              android:authorities="org.thoughtcrime.securesms.fileprovider"
+              android:authorities="org.eti.meta.fileprovider"
               android:exported="false"
               android:grantUriPermissions="true">
 
@@ -633,79 +633,79 @@
 
     </provider>
 
-    <provider android:name=".database.DatabaseContentProviders$Conversation"
-              android:authorities="org.thoughtcrime.securesms.database.conversation"
+    <provider android:name="org.eti.meta.database.DatabaseContentProviders$Conversation"
+              android:authorities="org.eti.meta.database.conversation"
               android:exported="false" />
 
-    <provider android:name=".database.DatabaseContentProviders$ConversationList"
-              android:authorities="org.thoughtcrime.securesms.database.conversationlist"
+    <provider android:name="org.eti.meta.database.DatabaseContentProviders$ConversationList"
+              android:authorities="org.eti.meta.database.conversationlist"
               android:exported="false" />
 
-    <provider android:name=".database.DatabaseContentProviders$Attachment"
-              android:authorities="org.thoughtcrime.securesms.database.attachment"
+    <provider android:name="org.eti.meta.database.DatabaseContentProviders$Attachment"
+              android:authorities="org.eti.meta.database.attachment"
               android:exported="false" />
 
-    <provider android:name=".database.DatabaseContentProviders$Sticker"
-              android:authorities="org.thoughtcrime.securesms.database.sticker"
+    <provider android:name="org.eti.meta.database.DatabaseContentProviders$Sticker"
+              android:authorities="org.eti.meta.database.sticker"
               android:exported="false" />
 
-    <provider android:name=".database.DatabaseContentProviders$StickerPack"
-              android:authorities="org.thoughtcrime.securesms.database.stickerpack"
+    <provider android:name="org.eti.meta.database.DatabaseContentProviders$StickerPack"
+              android:authorities="org.eti.meta.database.stickerpack"
               android:exported="false" />
 
-    <receiver android:name=".service.BootReceiver">
+    <receiver android:name="org.eti.meta.service.BootReceiver">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED"/>
             <action android:name="org.thoughtcrime.securesms.RESTART"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.DirectoryRefreshListener">
+    <receiver android:name="org.eti.meta.service.DirectoryRefreshListener">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.RotateSignedPreKeyListener">
+    <receiver android:name="org.eti.meta.service.RotateSignedPreKeyListener">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.RotateSenderCertificateListener">
+    <receiver android:name="org.eti.meta.service.RotateSenderCertificateListener">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.LocalBackupListener">
+    <receiver android:name="org.eti.meta.service.LocalBackupListener">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".service.PersistentConnectionBootListener">
+    <receiver android:name="org.eti.meta.service.PersistentConnectionBootListener">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.LocaleChangedReceiver">
+    <receiver android:name="org.eti.meta.notifications.LocaleChangedReceiver">
         <intent-filter>
             <action android:name="android.intent.action.LOCALE_CHANGED"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.MessageNotifier$ReminderReceiver"/>
+    <receiver android:name="org.eti.meta.notifications.MessageNotifier$ReminderReceiver"/>
 
-    <receiver android:name=".notifications.DeleteNotificationReceiver">
+    <receiver android:name="org.eti.meta.notifications.DeleteNotificationReceiver">
         <intent-filter>
             <action android:name="org.thoughtcrime.securesms.DELETE_NOTIFICATION"/>
         </intent-filter>
     </receiver>
 
     <receiver
-        android:name=".service.PanicResponderListener"
+        android:name="org.eti.meta.service.PanicResponderListener"
         android:exported="true">
         <intent-filter>
             <action android:name="info.guardianproject.panic.action.TRIGGER" />
@@ -713,28 +713,28 @@
     </receiver>
 
     <service
-        android:name=".gcm.FcmJobService"
+        android:name="org.eti.meta.gcm.FcmJobService"
         android:permission="android.permission.BIND_JOB_SERVICE"
         android:enabled="@bool/enable_job_service"
         tools:targetApi="26" />
 
     <service
-        android:name=".jobmanager.JobSchedulerScheduler$SystemService"
+        android:name="org.eti.meta.jobmanager.JobSchedulerScheduler$SystemService"
         android:permission="android.permission.BIND_JOB_SERVICE"
         android:enabled="@bool/enable_job_service"
         tools:targetApi="26" />
 
     <service
-        android:name=".jobmanager.KeepAliveService"
+        android:name="org.eti.meta.jobmanager.KeepAliveService"
         android:enabled="@bool/enable_alarm_manager" />
 
     <receiver
-        android:name=".jobmanager.AlarmManagerScheduler$RetryReceiver"
+        android:name="org.eti.meta.jobmanager.AlarmManagerScheduler$RetryReceiver"
         android:enabled="@bool/enable_alarm_manager" />
 
     <!-- Probably don't need this one -->
     <receiver
-        android:name=".jobmanager.BootReceiver"
+        android:name="org.eti.meta.jobmanager.BootReceiver"
         android:enabled="true">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />

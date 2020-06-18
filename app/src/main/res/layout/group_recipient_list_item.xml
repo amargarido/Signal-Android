@@ -8,7 +8,7 @@
     android:clickable="true"
     android:focusable="true">
 
-    <org.thoughtcrime.securesms.components.AvatarImageView
+    <org.eti.meta.components.AvatarImageView
         android:id="@+id/recipient_avatar"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
 
-        <org.thoughtcrime.securesms.groups.ui.PopupMenuView
+        <org.eti.meta.groups.ui.PopupMenuView
             android:id="@+id/popupMenu"
             android:layout_width="24dp"
             android:layout_height="24dp"

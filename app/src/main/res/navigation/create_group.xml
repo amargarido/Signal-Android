@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/addGroupDetailsFragment"
-        android:name="org.thoughtcrime.securesms.groups.ui.creategroup.details.AddGroupDetailsFragment"
+        android:name="org.eti.meta.groups.ui.creategroup.details.AddGroupDetailsFragment"
         android:label="add_group_details_fragment"
         tools:layout="@layout/add_group_details_fragment">
 

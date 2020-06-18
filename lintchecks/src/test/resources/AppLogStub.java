@@ -1,4 +1,4 @@
-package org.thoughtcrime.securesms.logging;
+package org.eti.meta.logging;
 
 public class Log {
 

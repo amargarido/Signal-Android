@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/createKbsPinFragment"
-        android:name="org.thoughtcrime.securesms.lock.v2.CreateKbsPinFragment"
+        android:name="org.eti.meta.lock.v2.CreateKbsPinFragment"
         android:label="fragment_edit_kbs_pin"
         tools:layout="@layout/base_kbs_pin_fragment">
 
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/confirmKbsPinFragment"
-        android:name="org.thoughtcrime.securesms.lock.v2.ConfirmKbsPinFragment"
+        android:name="org.eti.meta.lock.v2.ConfirmKbsPinFragment"
         android:label="fragment_confirm_new_pin"
         tools:layout="@layout/base_kbs_pin_fragment">
 
